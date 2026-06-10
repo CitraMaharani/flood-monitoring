@@ -533,16 +533,16 @@ body {
   font-size: 12px;
 }
 
-.status-awas {
+.status-siaga1 {
   background-color: #dc3545;
 }
 
-.status-waspada {
+.status-siaga2 {
   background-color: #ffc107;
   color: #111827;
 }
 
-.status-aman {
+.status-siaga3 {
   background-color: #22c55e;
 }
 
@@ -672,17 +672,17 @@ body {
 }
 
 /* Dynamic status color, bisa kamu set di JS juga */
-.status-pill.Aman {
+.status-pill.siaga3 {
   background: #d1fae5;
   color: #065f46;
 }
 
-.status-pill.Waspada {
+.status-pill.siaga2 {
   background: #fef3c7;
   color: #92400e;
 }
 
-.status-pill.Bahaya {
+.status-pill.siaga1 {
   background: #fee2e2;
   color: #b91c1c;
 }

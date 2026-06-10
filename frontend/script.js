@@ -33,12 +33,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function renderStatusLabel(level) {
     if (level <= 100) {
-      return `<span class="status-label status-awas">AWAS</span>`;
+      return `<span class="status-label status-siaga1">Siaga 1</span>`;
     }
     if (level <= 200) {
-      return `<span class="status-label status-waspada">WASPADA</span>`;
+      return `<span class="status-label status-siaga2">Siaga 2</span>`;
     }
-    return `<span class="status-label status-aman">AMAN</span>`;
+    return `<span class="status-label status-siaga3">Siaga 3</span>`;
   }
 
   // ----------------- AUTH / ROLE HANDLER -----------------
@@ -155,33 +155,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const status =
         data.status ||
-        (data.level <= 100 ? "Awas" : data.level <= 200 ? "Waspada" : "Aman");
+        (data.level <= 100 ? "Siaga 1" : data.level <= 200 ? "Siaga 2" : "Siaga 3");
 
-      if (status === "Awas") {
+      if (status === "Siaga 1") {
         himbauanP.textContent =
-          "STATUS AWAS: Segera evakuasi ke tempat yang lebih tinggi dan ikuti arahan dari pihak berwenang.";
+          "STATUS Siaga 1: Segera evakuasi ke tempat yang lebih tinggi dan ikuti arahan dari pihak berwenang.";
         statusBox.innerHTML = `
           <h4>Status Saat Ini</h4>
           <div style="padding: 12px; background: #dc3545; color: white; border-radius: 8px;">
-            <strong>AWAS</strong> – Ketinggian air: ${data.level} cm
+            <strong>Siaga 1</strong> – Ketinggian air: ${data.level} cm
           </div>
         `;
-      } else if (status === "Waspada") {
+      } else if (status === "Siaga 2") {
         himbauanP.textContent =
-          "STATUS WASPADA: Tetap waspada. Pantau kondisi secara berkala dan persiapkan diri untuk kemungkinan banjir.";
+          "STATUS Siaga 2: Tetap waspada. Pantau kondisi secara berkala dan persiapkan diri untuk kemungkinan banjir.";
         statusBox.innerHTML = `
           <h4>Status Saat Ini</h4>
           <div style="padding: 12px; background: #ffc107; color: black; border-radius: 8px;">
-            <strong>WASPADA</strong> – Ketinggian air: ${data.level} cm
+            <strong>Siaga 2</strong> – Ketinggian air: ${data.level} cm
           </div>
         `;
       } else {
         himbauanP.textContent =
-          "STATUS AMAN: Belum ada peningkatan debit air secara mencolok.";
+          "STATUS Siaga 3: Belum ada peningkatan debit air secara mencolok.";
         statusBox.innerHTML = `
           <h4>Status Saat Ini</h4>
           <div style="padding: 12px; background: #28a745; color: white; border-radius: 8px;">
-            <strong>AMAN</strong> – Ketinggian air: ${data.level} cm
+            <strong>Siaga 3</strong> – Ketinggian air: ${data.level} cm
           </div>
         `;
       }
